@@ -3,6 +3,15 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 
 const nextConfig: NextConfig = {
+  images: {
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "images.unsplash.com",
+        pathname: "/**",
+      },
+    ],
+  },
   // Keep this repo as the app root when it sits inside the builder monorepo.
   turbopack: {
     root: path.dirname(fileURLToPath(import.meta.url)),
